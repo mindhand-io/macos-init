@@ -105,20 +105,7 @@ brew tap homebrew/cask-versions
 brew install zsh coreutils git curl wget openssl jq mas thefuck exa hub bat fzf ripgrep prettyping glances
 
 printf "\nStart installing Common app:\n\n"
-cask_install java
-cask_install google-chrome
-cask_install microsoft-teams
-cask_install 1password
-cask_install google-backup-and-sync
-cask_install wechat
-cask_install telegram
-cask_install skyfonts
-cask_install font-noto-sans-cjk
-cask_install font-noto-serif-cjk
-cask_install font-inconsolata
-cask_install font-source-code-pro
-cask_install font-roboto
-cask_install font-raleway
+cask_install dingtalk
 
 if [[ -f ~/.zshrc ]]
 then
@@ -129,14 +116,20 @@ wget -O ~/.oh-my-zsh/custom/themes/sunaku-zen.zsh-theme  https://raw.githubuserc
 wget -O  ~./.zshrc https://gist.githubusercontent.com/0xDing/8c46593df591af9e11d5fad397d7ec7c/raw/5c3d3bdcbd33cf6eb002e93fba4f0c55636a7dce/.zshrc
 fi
 
-if ask "Do you want install Sketch?"; then
-cask_install sketch
-fi
+if ask "你是否需要安装微信等常用软件？"; then
+cask_install wechat
+cask_install zoom
+cask_install neteasemusic
+cask_install xmind
+end
 
-if ask "Do you want install development environment?"; then
+if ask "你是否需要安装Figma？"; then
+cask_install figma
+end
+
+if ask "你是否需要安装程序开发环境？"; then
 brew install sqlite watchman coreutils automake autoconf libyaml readline libxslt libtool libxml2 webp pkg-config gnupg p7zip xz imagemagick
 brew install libpq && brew link --force libpq
-cask_install google-cloud-sdk
 brew install kubernetes-cli kubernetes-helm
 cask_install visual-studio-code
 cask_install docker && cask_install kitematic
@@ -159,7 +152,7 @@ fi
 if which nvm >/dev/null 2>&1; then
 success "› Skipping nodejs installation"
 else
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -181,29 +174,11 @@ if which pyenv >/dev/null 2>&1; then
 success "› Skipping python installation"
 else
 brew install pyenv
-pyenv install 3.7.1
-pyenv global 3.7.1
+pyenv install 3.8.2
+pyenv global 3.8.2
 fi
 
-
-## rust
-if which rustc >/dev/null 2>&1; then
-success "› Skipping python installation"
-else
-curl https://sh.rustup.rs -sSf | sh
-source $HOME/.cargo/env
 fi
 
-## go
-#brew install go
-
-## scala
-#brew install scala
-
-## powershell
-#cask_install powershell
-fi
-
-success "Your macos has completed initialization. Vist https://portal.manage.microsoft.com/devices to get started now";
-/usr/bin/open -a "/Applications/Google Chrome.app" 'https://portal.manage.microsoft.com/devices'
+success "Your macOS has completed initialization. Vist https://portal.manage.microsoft.com/devices to get started now";
 exit 0;
