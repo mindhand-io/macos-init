@@ -180,7 +180,8 @@ fi
 
 fi
 
-wget https://nssurge.com/mac/v3/Surge-latest.zip
+chmod 755 /usr/local/share/zsh
+chmod 755 /usr/local/share/zsh/site-functions
 
 success "Your macOS has completed initialization. Vist https://portal.manage.microsoft.com/devices to get started now";
 exit 0;
