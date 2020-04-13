@@ -64,14 +64,14 @@ MACOS_VERSION="$(sw_vers -productVersion)"
 groups | grep $Q admin || abort "Add $USER to the admin group."
 
 cat << "EOF"
-   ____             _                _   
-  / __ \           | |              | |  
- | |  | | ___  _ __| |_ ___ __ _ ___| |_ 
- | |  | |/ _ \| '__| __/ __/ _` / __| __|
- | |__| | (_) | |  | || (_| (_| \__ \ |_ 
-  \____/ \___/|_|   \__\___\__,_|___/\__|
+ __  __ _           _ _                     _              __  _ 
+|  \/  (_)         | | |                   | |             \_\(_)
+| \  / |_ _ __   __| | |__   __ _ _ __   __| |   __ ____   ___| |
+| |\/| | | '_ \ / _` | '_ \ / _` | '_ \ / _` |  / _`  _ \ / _ \ |
+| |  | | | | | | (_| | | | | (_| | | | | (_| | | (_|  __/|  __/ |
+|_|  |_|_|_| |_|\__,_|_| |_|\__,_|_| |_|\__,_|  \__,____| \___|_| 思行科技
 
- [https://github.com/oortcast/macos-init]                                                                                                 
+ [https://github.com/mindhand-tech/macos-init]                                                                                                 
 
 EOF
 success "Runing system test ...... PASS"
@@ -121,11 +121,11 @@ cask_install wechat
 cask_install zoom
 cask_install neteasemusic
 cask_install xmind
-end
+fi
 
 if ask "你是否需要安装Figma？"; then
 cask_install figma
-end
+fi
 
 if ask "你是否需要安装程序开发环境？"; then
 brew install sqlite watchman coreutils automake autoconf libyaml readline libxslt libtool libxml2 webp pkg-config gnupg p7zip xz imagemagick
