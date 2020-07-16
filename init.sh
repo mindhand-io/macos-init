@@ -116,6 +116,8 @@ wget -O ~/.oh-my-zsh/custom/themes/sunaku-zen.zsh-theme  https://raw.githubuserc
 wget -O  ~./.zshrc https://gist.githubusercontent.com/0xDing/8c46593df591af9e11d5fad397d7ec7c/raw/5c3d3bdcbd33cf6eb002e93fba4f0c55636a7dce/.zshrc
 fi
 
+brew tap homebrew/cask-fonts && brew cask install font-sarasa-gothic
+
 if ask "你是否需要安装微信等常用软件？"; then
 cask_install wechat
 cask_install zoom
