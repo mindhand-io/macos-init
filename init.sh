@@ -144,8 +144,8 @@ else
 curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 curl -sSL https://get.rvm.io | bash -s stable
 . ~/.bash_profile
-rvm install ruby-2.6.3
-rvm use 2.6.3 --default
+rvm install ruby-2.7.1
+rvm use 2.7.1 --default
 gem install heel
 fi
 
