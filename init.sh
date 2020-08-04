@@ -138,7 +138,7 @@ cask_install docker && cask_install kitematic
 cask_install jetbrains-toolbox
 
 ## ruby
-if [ `ruby -v | grep "2.6" | wc -l` = 1 ]; then
+if [ `ruby -v | grep "2.7" | wc -l` = 1 ]; then
   success "› Skipping ruby installation"
 else
 curl -sSL https://rvm.io/mpapis.asc | gpg --import -
